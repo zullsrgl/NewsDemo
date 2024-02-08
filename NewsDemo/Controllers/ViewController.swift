@@ -25,26 +25,29 @@ class ViewController: UIViewController {
         newsTableViewCell.dataSource = self
         newsTableViewCell.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: "cellCategory")
         userDef.set(0, forKey: "CategoryIndex")
-        let  url : String  = "https://raw.githubusercontent.com/enesarabaci/NewsApp/master/testJson"
-        
-        APICaller.shared.getData(from: url) { [weak self] result in
+        apiCaller()
+      
+    }
+    
+    func apiCaller() {
+        let  baseUrl : String  = "https://raw.githubusercontent.com/enesarabaci/NewsApp/master/testJson"
+
+        APICaller.shared.getData(from: baseUrl) { result in
             switch result {
             case .success(let fetchedArticles) :
-                self?.articles = fetchedArticles
+                self.articles = fetchedArticles
                 DispatchQueue.main.async {
-                    self?.newsTableViewCell.reloadData()
+                    self.newsTableViewCell.reloadData()
                 }
-            
             case .failure(_):
                 print("Hata oluştu")
+                
             }
         }
     }
-    
-   
-
 }
 
+//MARK: Table View
 extension ViewController : UITableViewDataSource , UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
@@ -53,21 +56,20 @@ extension ViewController : UITableViewDataSource , UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellCategory", for: indexPath) as! NewsTableViewCell
         let article = articles[indexPath.row]
-        cell.neswLabel.text = article.title
+        cell.configure(with: article)
         return cell
     }
 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 100
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
     }
 }
 
 
-
+//MARK: Collection View
 extension ViewController : UICollectionViewDelegate , UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return newsCategory.count

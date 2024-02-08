@@ -9,7 +9,7 @@ import Foundation
 // MARK: - Welcome
 struct Welcome: Codable {
     let status: String
-    let totalResults: Int?
+    let totalResults: Int
     let articles: [Article]
 }
 
@@ -29,4 +29,3 @@ struct Source: Codable {
     let id: String?
     let name: String
 }
-

@@ -43,8 +43,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="neswLabel" destination="pZZ-VV-oNx" id="SxD-Y7-eS7"/>
                 <outlet property="newsImage" destination="5ks-Yq-Ope" id="qks-CT-7jL"/>
+                <outlet property="newsLabel" destination="pZZ-VV-oNx" id="SxD-Y7-eS7"/>
             </connections>
             <point key="canvasLocation" x="141.98473282442748" y="57.394366197183103"/>
         </tableViewCell>
