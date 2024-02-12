@@ -74,16 +74,15 @@
 		BEA234C92B72A45D00A7A5C5 /* NewsDemo */ = {
 			isa = PBXGroup;
 			children = (
-				BEA234E92B73F93400A7A5C5 /* APIManager.swift */,
 				BEA234CA2B72A45D00A7A5C5 /* AppDelegate.swift */,
 				BEA234CC2B72A45D00A7A5C5 /* SceneDelegate.swift */,
+				BEA234F52B7512C300A7A5C5 /* Managment */,
+				BEA234F42B75127000A7A5C5 /* XİB */,
 				BEA234DE2B72A6C400A7A5C5 /* Controllers */,
 				BEA234D02B72A45D00A7A5C5 /* Main.storyboard */,
-				BEA234D32B72A45E00A7A5C5 /* Assets.xcassets */,
 				BEA234D52B72A45E00A7A5C5 /* LaunchScreen.storyboard */,
+				BEA234D32B72A45E00A7A5C5 /* Assets.xcassets */,
 				BEA234D82B72A45E00A7A5C5 /* Info.plist */,
-				BEA234E52B73A6E000A7A5C5 /* NewsTableViewCell.swift */,
-				BEA234E62B73A6E000A7A5C5 /* NewsTableViewCell.xib */,
 			);
 			path = NewsDemo;
 			sourceTree = "<group>";
@@ -92,11 +91,29 @@
 			isa = PBXGroup;
 			children = (
 				BEA234CE2B72A45D00A7A5C5 /* ViewController.swift */,
-				BEA234DF2B72A70D00A7A5C5 /* Categorycollections.swift */,
-				BEA234E02B72A70D00A7A5C5 /* Categorycollections.xib */,
 				BEA234E32B72C6D000A7A5C5 /* Model.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BEA234F42B75127000A7A5C5 /* XİB */ = {
+			isa = PBXGroup;
+			children = (
+				BEA234E52B73A6E000A7A5C5 /* NewsTableViewCell.swift */,
+				BEA234E62B73A6E000A7A5C5 /* NewsTableViewCell.xib */,
+				BEA234DF2B72A70D00A7A5C5 /* Categorycollections.swift */,
+				BEA234E02B72A70D00A7A5C5 /* Categorycollections.xib */,
+			);
+			name = "XİB";
+			path = "XİB";
+			sourceTree = "<group>";
+		};
+		BEA234F52B7512C300A7A5C5 /* Managment */ = {
+			isa = PBXGroup;
+			children = (
+				BEA234E92B73F93400A7A5C5 /* APIManager.swift */,
+			);
+			path = Managment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

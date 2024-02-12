@@ -65,6 +65,8 @@ extension ViewController : UITableViewDataSource , UITableViewDelegate {
         return 100
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("select item: \(indexPath.row)")
+        
     }
 }
 
@@ -77,7 +79,6 @@ extension ViewController : UICollectionViewDelegate , UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionViewCategory.dequeueReusableCell(withReuseIdentifier: "cellCategory", for: indexPath) as! Categorycollections
-        
         if userDef.integer(forKey: "CategoryIndex") == indexPath.row {
             cell.labelCategory.textColor = .black
             cell.border.backgroundColor = .black
@@ -96,6 +97,10 @@ extension ViewController : UICollectionViewDelegate , UICollectionViewDataSource
         userDef.set(indexPath.row, forKey: "CategoryIndex")
         collectionView.reloadData()
         print(indexPath.row)
+        if indexPath.row > 0 {
+            newsTableViewCell.isHidden = true
+        }
+        
     }
     
 }
