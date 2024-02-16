@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE3BDA712B7E0B6500E0DDDB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3BDA702B7E0B6500E0DDDB /* SearchViewController.swift */; };
 		BEA234CB2B72A45D00A7A5C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA234CA2B72A45D00A7A5C5 /* AppDelegate.swift */; };
 		BEA234CD2B72A45D00A7A5C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA234CC2B72A45D00A7A5C5 /* SceneDelegate.swift */; };
 		BEA234CF2B72A45D00A7A5C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA234CE2B72A45D00A7A5C5 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE3BDA702B7E0B6500E0DDDB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BEA234C72B72A45D00A7A5C5 /* NewsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA234CA2B72A45D00A7A5C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA234CC2B72A45D00A7A5C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				BEA234CE2B72A45D00A7A5C5 /* ViewController.swift */,
+				BE3BDA702B7E0B6500E0DDDB /* SearchViewController.swift */,
 				BEA234E32B72C6D000A7A5C5 /* Model.swift */,
 			);
 			path = Controllers;
@@ -200,6 +203,7 @@
 			files = (
 				BEA234E42B72C6D000A7A5C5 /* Model.swift in Sources */,
 				BEA234CF2B72A45D00A7A5C5 /* ViewController.swift in Sources */,
+				BE3BDA712B7E0B6500E0DDDB /* SearchViewController.swift in Sources */,
 				BEA234E72B73A6E000A7A5C5 /* NewsTableViewCell.swift in Sources */,
 				BEA234E12B72A70D00A7A5C5 /* Categorycollections.swift in Sources */,
 				BEA234CB2B72A45D00A7A5C5 /* AppDelegate.swift in Sources */,

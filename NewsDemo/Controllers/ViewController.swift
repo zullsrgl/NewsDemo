@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ViewController: UIViewController {
     
@@ -13,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var newsTableViewCell: UITableView!
     var articles = [Article]()
     
-    let newsCategory = ["Nasional" , "Inter Nasional", "Ekonomi","Teknologi"]
+    let newsCategory = ["Nasional"]
     let userDef = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -26,17 +27,18 @@ class ViewController: UIViewController {
         newsTableViewCell.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: "cellCategory")
         userDef.set(0, forKey: "CategoryIndex")
         apiCaller()
+       
       
     }
     
     func apiCaller() {
         let  baseUrl : String  = "https://raw.githubusercontent.com/enesarabaci/NewsApp/master/testJson"
-
         APICaller.shared.getData(from: baseUrl) { result in
             switch result {
             case .success(let fetchedArticles) :
                 self.articles = fetchedArticles
                 DispatchQueue.main.async {
+                    print("in dispatch code block ")
                     self.newsTableViewCell.reloadData()
                 }
             case .failure(_):
@@ -57,6 +59,7 @@ extension ViewController : UITableViewDataSource , UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellCategory", for: indexPath) as! NewsTableViewCell
         let article = articles[indexPath.row]
         cell.configure(with: article)
+        cell.selectionStyle = .none
         return cell
     }
 
@@ -65,8 +68,12 @@ extension ViewController : UITableViewDataSource , UITableViewDelegate {
         return 100
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("select item: \(indexPath.row)")
-        
+        let article = articles[indexPath.row]
+        guard let url = URL(string: article.url ) else  {
+            return
+        }
+        let vc = SFSafariViewController(url: url)
+        present(vc,animated: true)
     }
 }
 

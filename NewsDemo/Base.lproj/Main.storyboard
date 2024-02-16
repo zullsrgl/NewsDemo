@@ -41,20 +41,19 @@
                                 </cells>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="18n-wI-eC8">
-                                <rect key="frame" x="0.0" y="151" width="393" height="618"/>
+                                <rect key="frame" x="0.0" y="117" width="393" height="652"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="18n-wI-eC8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2aR-jr-o5d"/>
+                            <constraint firstItem="18n-wI-eC8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="58" id="6Ix-3I-ndH"/>
+                            <constraint firstItem="18n-wI-eC8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6wI-JO-6PP"/>
                             <constraint firstItem="18n-wI-eC8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9oZ-6X-2rk"/>
-                            <constraint firstItem="18n-wI-eC8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="85" id="Vbi-fO-lhq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="18n-wI-eC8" secondAttribute="bottom" id="BQE-dr-Cil"/>
                             <constraint firstItem="VFw-n8-2VI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dyb-BX-sVv"/>
                             <constraint firstItem="VFw-n8-2VI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="n2b-xG-ubR"/>
-                            <constraint firstItem="18n-wI-eC8" firstAttribute="top" secondItem="VFw-n8-2VI" secondAttribute="bottom" constant="42" id="t4l-OK-3Cj"/>
-                            <constraint firstItem="18n-wI-eC8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xfi-Gn-lwk"/>
                             <constraint firstItem="VFw-n8-2VI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z49-Yt-7R7"/>
                         </constraints>
                     </view>
@@ -69,11 +68,10 @@
             </objects>
             <point key="canvasLocation" x="-964.12213740458014" y="787.32394366197184"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="E38-O0-wVf">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1YB-Y9-DL8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="81G-ZU-v9c" sceneMemberID="viewController">
+                <viewController id="81G-ZU-v9c" customClass="SearchViewController" customModule="NewsDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c6U-Df-7Ob">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,7 +103,12 @@
                     <tabBarItem key="tabBarItem" tag="1" systemItem="search" id="uyV-V3-MIu">
                         <color key="badgeColor" red="0.45437519199999998" green="0.24520498430000001" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="searchBar" destination="D6i-Nx-lef" id="1E3-DH-abM"/>
+                        <outlet property="searchTableView" destination="yYc-5T-hKq" id="7Ga-mh-2Js"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1YB-Y9-DL8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-54" y="787"/>
         </scene>

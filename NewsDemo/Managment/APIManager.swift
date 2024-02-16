@@ -26,4 +26,23 @@ class APICaller {
             }
         }
     }
+    
+    func getNews(keyword : String? , completion: @escaping (Result<[Article] , Error>) -> Void){
+        guard keyword != nil else {return}
+        guard let url = URL(string: "https://raw.githubusercontent.com/enesarabaci/NewsApp/master/testJson") else {return }
+        AF.request(url).responseData { response in
+            switch response.result {
+            case.success(let data) :
+                do {
+                    let result = try JSONDecoder().decode(Welcome.self, from: data)
+                    completion(.success(result.articles))
+                }catch {
+                    completion(.failure(error))
+                }
+            case.failure(_) :
+                print("error")
+            }
+        }
+        
+    }
 }
